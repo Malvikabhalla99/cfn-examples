@@ -22,7 +22,7 @@ Resources:
       KeyName: !Ref keyname
       DisableApiTermination: False
       ImageId: !Ref AMI
-      SubnetId: subnet-0248b5db469dbb262
+      SubnetId: subnet-0dd52f16b706ceda3
       InstanceType: !Ref InstanceType
       Monitoring: false
       SecurityGroupIds:
