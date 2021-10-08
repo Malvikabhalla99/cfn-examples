@@ -45,5 +45,5 @@ Outputs:
     Description: "EC2 instance availability zone"
     Value: !GetAtt myEC2Instance.AvailabilityZone
     Export:
-      Name: "EC2-instance-tags"
+      Name: "EC2-instance-availability-zone"
  
