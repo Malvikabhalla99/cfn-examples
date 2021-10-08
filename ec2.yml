@@ -38,12 +38,12 @@ Resources:
 Outputs:
   EC2InstancePrivateIPAddress:
     Description: "Private IP address of EC2 instance created"
-    Value: !GetAtt myEC2Instance.PrivateIpAddress
+    Value: !GetAtt myEC2Instance.PrivateIp
     Export:
       Name: "EC2-instance-private-ip-v4-address"
-  EC2InstanceTags:
-    Description: "EC2 instance tags"
-    Value: !GetAtt myEC2Instance.Tag
+  EC2InstanceAvailabilityZone:
+    Description: "EC2 instance availability zone"
+    Value: !GetAtt myEC2Instance.AvailabilityZone
     Export:
       Name: "EC2-instance-tags"
  
