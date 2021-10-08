@@ -1,7 +1,7 @@
 [
   {
     "ParameterKey": "ServerName",
-    "ParameterValue": "myec2instance"
+    "ParameterValue": "myec2instance123"
   },
   {
     "ParameterKey": "AMI",
