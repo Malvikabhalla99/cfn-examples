@@ -40,10 +40,10 @@ Outputs:
     Description: "Private IP address of EC2 instance created"
     Value: !GetAtt myEC2Instance.PrivateIpAddress
     Export:
-      Name: "EC2 instance private ip v4 address"
+      Name: "EC2-instance-private-ip-v4-address"
   EC2InstanceTags:
     Description: "EC2 instance tags"
     Value: !GetAtt myEC2Instance.Tag
     Export:
-      Name: "EC2 instance tags"
+      Name: "EC2-instance-tags"
  
