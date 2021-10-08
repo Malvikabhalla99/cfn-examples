@@ -38,12 +38,12 @@ Resources:
 Outputs:
   EC2InstancePrivateIPAddress:
     Description: "Private IP address of EC2 instance created"
-    Value: !Ref myEC2Instance.PrivateIpAddress
+    Value: !GetAtt myEC2Instance.PrivateIpAddress
     Export:
       Name: "EC2 instance private ip v4 address"
   EC2InstanceTags:
     Description: "EC2 instance tags"
-    Value: !Ref myEC2Instance.Tag
+    Value: !GetAtt myEC2Instance.Tag
     Export:
       Name: "EC2 instance tags"
  
