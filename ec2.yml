@@ -34,6 +34,41 @@ Resources:
       Tags:
         - Key: Name
           Value: !Ref ServerName
+          
+  ScreeningRequestDynamoTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: "some-name"
+      BillingMode: PAY_PER_REQUEST
+      PointInTimeRecoverySpecification:
+        PointInTimeRecoveryEnabled: true
+      AttributeDefinitions:
+        - AttributeName: "screening_result"
+          AttributeType: "S"
+        - AttributeName: "external_screeningid"
+          AttributeType: "S"
+        - AttributeName: "supplier_id"
+          AttributeType: "S"
+      KeySchema:
+        - AttributeName: "external_screeningid"
+          KeyType: "HASH"
+      GlobalSecondaryIndexes:
+        - IndexName: "ScreeningResultIndex"
+          KeySchema:
+            - AttributeName: "screening_result"
+              KeyType: HASH
+          Projection:
+            ProjectionType: "ALL"
+        - IndexName: "SupplierIdScreeningResultIndex"
+          KeySchema:
+            - AttributeName: "supplier_id"
+              KeyType: HASH
+            - AttributeName: "screening_result"
+              KeyType: RANGE
+          Projection:
+            ProjectionType: "ALL"
+      StreamSpecification:
+        StreamViewType: NEW_AND_OLD_IMAGES
          
 Outputs:
   EC2InstancePrivateIPAddress:
@@ -46,4 +81,9 @@ Outputs:
     Value: !GetAtt myEC2Instance.AvailabilityZone
     Export:
       Name: "EC2-instance-availability-zone"
+  ScreeningRequestDynamoTableName:
+    Description: "Screening Request Dynamo Table Name"
+    Value: !Ref ScreeningRequestDynamoTable
+    Export:
+      Name: "screeningrequesttable-TableName"
  
