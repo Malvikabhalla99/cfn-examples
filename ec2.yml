@@ -69,21 +69,4 @@ Resources:
             ProjectionType: "ALL"
       StreamSpecification:
         StreamViewType: NEW_AND_OLD_IMAGES
-         
-Outputs:
-  EC2InstancePrivateIPAddress:
-    Description: "Private IP address of EC2 instance"
-    Value: !GetAtt myEC2Instance.PrivateIp
-    Export:
-      Name: "EC2-instance-private-ip-v4-address"
-  EC2InstanceAvailabilityZone:
-    Description: "EC2 instance availability zone"
-    Value: !GetAtt myEC2Instance.AvailabilityZone
-    Export:
-      Name: "EC2-instance-availability-zone"
-  ScreeningRequestDynamoTableName:
-    Description: "Screening Request Dynamo Table Name"
-    Value: !Ref ScreeningRequestDynamoTable
-    Export:
-      Name: "screeningrequesttable-TableName"
- 
+   
