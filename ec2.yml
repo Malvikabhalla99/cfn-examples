@@ -72,7 +72,7 @@ Resources:
          
 Outputs:
   EC2InstancePrivateIPAddress:
-    Description: "Private IP address of EC2 instance created"
+    Description: "Private IP address of EC2 instance"
     Value: !GetAtt myEC2Instance.PrivateIp
     Export:
       Name: "EC2-instance-private-ip-v4-address"
